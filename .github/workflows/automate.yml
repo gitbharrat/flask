@@ -20,4 +20,4 @@ jobs:
             pip install -r requirements.txt
             pip install pytest
         - name: Run Test Cases
-          run: pytest test_hello.py
+          run: pytest test_predictions.py
