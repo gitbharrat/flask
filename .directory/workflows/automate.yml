@@ -1,15 +1,15 @@
-name: Running tet on push to main
+name: Running test on push to main
 
 on:
   push:
-      branches: ["main"]
+      branches: [ "main" ]
 
 jobs:
     build:
       runs-on: ubuntu-latest
 
       steps:
-        - uses: actions/checkout@v3
+        - uses: actions/checkout@v4
         - name: Set up Python   # Writing name is not necessary
           uses: actions/setup-python@v4   # Whenever something is similar we dont use -
           with:
