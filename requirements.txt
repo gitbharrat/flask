@@ -1,3 +1,4 @@
-flask
-scikit-learn
+flask~=3.0.3
+scikit-learn~=1.4.2
 pandas
+pytest~=8.1.1

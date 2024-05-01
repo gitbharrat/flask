@@ -2,7 +2,9 @@ from flask import Flask, request
 import pickle
 import sklearn
 
+
 app = Flask(__name__)
+
 
 @app.route("/")
 def hello_world():
@@ -13,8 +15,10 @@ def hello_world():
 def pinger():
     return {"MESSAGE": "Hi I am pinging V2...."}
 
+
 model_pickle= open("artefacts/classifier.pkl", 'rb')
 clf = pickle.load(model_pickle)
+
 
 @app.route("/predict", methods=['POST'])
 def predict():
@@ -34,7 +38,7 @@ def predict():
     credit_history = loan_req['Credit_History']
     loan_amount = loan_req['LoanAmount']
 
-    input_data = [[gender, married, applicant_income,loan_amount , credit_history]]
+    input_data = [[gender, married, applicant_income, loan_amount , credit_history]]
     prediction = clf.predict(input_data)
 
     if prediction == 0:
