@@ -66,7 +66,7 @@ jobs:
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
          task-definition: ${{ steps.task-def.outputs.task-definition }}
-         service: my-service
+         service: hamburger_loan_app_service
          cluster: hamburger_loan_app_cluster
          wait-for-service-stability: true
 
